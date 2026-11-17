@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Über mich – Mein Lieblingsobjekt</title>
 
-    <!-- Schriften: Gochi Hand (Titel) und General Sans (Text) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+    <!-- NEU: nur noch eine Schrift, Albert Sans, in den Stärken 300 bis 600 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap">
 
     <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
     <link rel="stylesheet" href="style.css">
@@ -18,7 +17,9 @@
 <body>
 <!-- Navigation: auf allen Seiten gleich -->
 <header>
-    <a href="index.html" class="logo">AE-1</a>
+    <!-- NEU: Zusatztext im span, weil er kleiner und grau ist -->
+    <a href="index.html" class="logo">AE-1 <span>Mein Augenblickfänger</span></a>
+
     <nav>
         <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
         <a href="index.html">Kamera</a>
@@ -30,9 +31,44 @@
     <button id="theme" type="button" aria-label="Hell oder Dunkelmodus"></button>
 </header>
 
-<!-- Hauptinhalt: ist auf jeder Seite anders -->
 <main>
-    <h1>Canon AE-1</h1>
+
+    <!-- Über mich: Porträt + Text -->
+    <section class="ueber-mich">
+        <figure>
+            <img src="img/portrait.jpg" alt="Porträt von Sina Kollegger">
+            <figcaption>Sina · 01A · Portra 400</figcaption>
+        </figure>
+        <p class="label">Über mich</p>
+        <h1>Hallo, ich bin Sina</h1>
+        <p>Meine Begeisterung für die Fotografie begann schon früh. Bereits als Kind schnappte ich mir heimlich die kleine Digitalkamera meiner Eltern, um meine ersten Fotoshootings zu veranstalten. Später folgte meine erste Spiegelreflexkamera, bis ich 2022 die analoge Fotografie für mich entdeckte.</p>
+        <p>Gemeinsam mit meiner besten Freundin verwandelte ich den Keller ihrer WG in eine kleine Dunkelkammer. Zwischen Entwicklerflüssigkeit, Rotlicht und der Vorfreude auf die ersten Bilder begannen wir, unsere Filme selbst zu entwickeln. Heute studiere ich Multimedia Production an der FH Graubünden in Chur.</p>
+
+        <!-- gleiche Klasse wie die Fakten auf der Startseite = gleiches CSS, kein neuer Code -->
+        <ul class="fakten">
+            <li><span>Studium</span> MMP · FHGR</li>
+            <li><span>Wohnort</span> Chur</li>
+            <li><span>Lieblingsfilm</span> Portra 400</li>
+            <li><span>Kamera</span> Canon AE-1</li>
+        </ul>
+    </section>
+
+    <!-- Impressum: rechtliche Angaben -->
+    <section class="impressum">
+        <h2>Impressum</h2>
+
+        <h3>Verantwortlich für den Inhalt</h3>
+        <!-- br = Zeilenumbruch innerhalb eines Absatzes -->
+        <p>Sina Kollegger<br>[Strasse Nr.]<br>[PLZ Ort]<br>Schweiz<br>[E-Mail]</p>
+
+        <h3>Haftungsausschluss</h3>
+        <p>Die Inhalte dieser Website wurden mit Sorgfalt erstellt. Für Richtigkeit, Vollständigkeit und Aktualität wird keine Gewähr übernommen. Für externe Links sind ausschliesslich deren Betreiber verantwortlich.</p>
+
+        <h3>Urheberrecht & Kontext</h3>
+        <p>Alle Fotografien © Sina Kollegger. Verwendung nur mit Erlaubnis.</p>
+        <p>Diese Website ist ein Studienprojekt im Modul IM1 an der FH Graubünden.</p>
+    </section>
+
 </main>
 
 <!-- Fussbereich: auf allen Seiten gleich -->

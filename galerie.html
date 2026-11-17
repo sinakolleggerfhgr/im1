@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Galerie – Mein Lieblingsobjekt</title>
 
-    <!-- Schriften: Gochi Hand (Titel) und General Sans (Text) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+    <!-- nur noch eine Schrift, Albert Sans, in den Stärken 300 bis 600 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap">
 
     <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
     <link rel="stylesheet" href="style.css">
@@ -18,7 +17,9 @@
 <body>
 <!-- Navigation: auf allen Seiten gleich -->
 <header>
-    <a href="index.html" class="logo">AE-1</a>
+    <!-- Zusatztext im span, weil er kleiner und grau ist -->
+    <a href="index.html" class="logo">AE-1 <span>Mein Augenblickfänger</span></a>
+
     <nav>
         <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
         <a href="index.html">Kamera</a>
@@ -32,7 +33,126 @@
 
 <!-- Hauptinhalt: ist auf jeder Seite anders -->
 <main>
-    <h1>Canon AE-1</h1>
+
+    <!-- Einleitung -->
+    <section class="intro">
+        <p class="label">Die Galerie</p>
+        <h1>Entwickle meine Bilder</h1>
+        <p>Klicke auf ein Negativ, um es zu entwickeln. Nach zehn Sekunden zeigt sich, was ich damals gesehen habe.</p>
+    </section>
+
+    <!-- Werkzeugleiste: Fortschritt und zwei Buttons -->
+    <section class="werkzeuge">
+        <!-- progress = fertiger Fortschrittsbalken vom Browser -->
+        <progress id="fortschritt" value="0" max="16"></progress>
+        <p><span id="zaehler">0</span> / 16 entwickelt</p>
+        <button id="alle-entwickeln" class="button" type="button">Alle entwickeln</button>
+        <button id="alle-zurueck" class="button button-rand" type="button">Alle zurück zum Negativ</button>
+    </section>
+
+    <!-- Die 16 Fotos -->
+    <section class="fotos">
+        <!-- button = man kann draufklicken (auch mit der Tastatur) -->
+        <button class="foto" type="button">
+            <img src="img/bild_1.JPG" alt="Freunde liegen im Schnee">
+            <span>Negativ 01</span>
+            <!-- je nachdem ob entwickelt, zeigt das CSS den einen oder den anderen Text -->
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Flims, Schweiz · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_2.JPG" alt="Marktstand in Suzhou">
+            <span>Negativ 02</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Suzhou, China · 2024</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_3.JPG" alt="Freunde in der verbotenen Stadt">
+            <span>Negativ 03</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Peking, China · 2024</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_4.JPG" alt="Mann auf Camper mit Surfbrett">
+            <span>Negativ 04</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">El Cotillo, Fuerteventura · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_5.JPG" alt="Neoprenanzug waschen">
+            <span>Negativ 05</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Lajares, Fuerteventura · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_6.JPG" alt="Frau und Mann ready zum Surfen">
+            <span>Negativ 06</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">La Oliva, Fuerteventura · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_7.JPG" alt="Zwei Snowboarder">
+            <span>Negativ 07</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Arosa, Schweiz · 2024</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_8.JPG" alt="Zwei Frauen mit Glitzer">
+            <span>Negativ 08</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Flims, Schweiz · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_9.JPG" alt="Drei Frauen und ein Mann im Schnee">
+            <span>Negativ 09</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Flims, Schweiz · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_10.JPG" alt="Eine Frau und zwei Männer mit Turbotony">
+            <span>Negativ 10</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Flims, Schweiz · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_11.JPG" alt="Grosse Wiese mit Frau die Wasser holt">
+            <span>Negativ 11</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Maienfeld, Schweiz · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_12.JPG" alt="Zwei Frauen vor Vulkan">
+            <span>Negativ 12</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Parque Nacional del Teide, Teneriffe · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_13.JPG" alt="Frau mit Buch">
+            <span>Negativ 13</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Maienfeld, Schweiz · 2025</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_14.JPG" alt="Viele Personen bei Gartenparty">
+            <span>Negativ 14</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Trimmis, Schweiz · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_15.JPG" alt="Mann am wandern von hinten">
+            <span>Negativ 15</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Montalin, Schweiz · 2026</span>
+        </button>
+        <button class="foto" type="button">
+            <img src="img/bild_16.JPG" alt="Zwei Frauen beim Ready machen auf dem Fussboden">
+            <span>Negativ 16</span>
+            <span class="hinweis">Klicken zum Entwickeln</span>
+            <span class="info">Konstanz, Deutschland · 2026</span>
+        </button>
+
+    </section>
+
 </main>
 
 <!-- Fussbereich: auf allen Seiten gleich -->

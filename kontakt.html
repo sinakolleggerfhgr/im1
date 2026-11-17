@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kontakt – Mein Lieblingsobjekt</title>
 
-    <!-- Schriften: Gochi Hand (Titel) und General Sans (Text) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+    <!-- NEU: nur noch eine Schrift, Albert Sans, in den Stärken 300 bis 600 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap">
 
     <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
     <link rel="stylesheet" href="style.css">
@@ -18,7 +17,9 @@
 <body>
 <!-- Navigation: auf allen Seiten gleich -->
 <header>
-    <a href="index.html" class="logo">AE-1</a>
+    <!-- NEU: Zusatztext im span, weil er kleiner und grau ist -->
+    <a href="index.html" class="logo">AE-1 <span>Mein Augenblickfänger</span></a>
+
     <nav>
         <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
         <a href="index.html" >Kamera</a>
@@ -30,9 +31,40 @@
     <button id="theme" type="button" aria-label="Hell oder Dunkelmodus"></button>
 </header>
 
-<!-- Hauptinhalt: ist auf jeder Seite anders -->
 <main>
-    <h1>Canon AE-1</h1>
+
+    <!-- Einleitung -->
+    <section class="kontakt-intro">
+        <p class="label">Kontakt</p>
+        <h1>Ein Auftrag fürs Filmlabor</h1>
+        <p>Fragen zur AE-1, zu Filmen oder Lust auf einen gemeinsamen Fotospaziergang? Füll den Auftragszettel aus, ich melde mich.</p>
+        <p class="label">Direkt</p>
+        <!-- mailto: öffnet das E-Mail-Programm -->
+        <a href="mailto:deine@mail.ch">deine@mail.ch</a>
+    </section>
+
+    <!-- Formular: muss laut Aufgabe nicht wirklich senden -->
+    <form>
+        <p>Auftrag Nr. 0001 <span>Entwicklung & Fragen</span></p>
+
+        <!-- for="name" gehört zu id="name": Klick auf das Label setzt den Cursor ins Feld -->
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Vor- und Nachname" required>
+
+        <!-- type="email" prüft automatisch, ob ein @ drin ist -->
+        <label for="email">E-Mail</label>
+        <input id="email" name="email" type="email" placeholder="sina@beispiel.ch" required>
+
+        <label for="betreff">Betreff</label>
+        <input id="betreff" name="betreff" type="text" placeholder="Frage zur Kamera">
+
+        <!-- textarea = mehrzeiliges Textfeld -->
+        <label for="nachricht">Nachricht</label>
+        <textarea id="nachricht" name="nachricht" rows="5" placeholder="Was möchtest du mir sagen?" required></textarea>
+
+        <button class="button" type="submit">Auftrag abschicken →</button>
+    </form>
+
 </main>
 
 <!-- Fussbereich: auf allen Seiten gleich -->

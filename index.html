@@ -5,11 +5,10 @@
 
     <!-- Seite passt sich der Bildschirmbreite an-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mein Lieblingsobjekt</title>
+    <title>Kamera – Mein Lieblingsobjekt</title>
 
-    <!-- Schriften: Gochi Hand (Titel) und General Sans (Text) -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+    <!--  nur noch eine Schrift, Albert Sans, in den Stärken 300 bis 600 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300;400;500;600&display=swap">
 
     <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
     <link rel="stylesheet" href="style.css">
@@ -18,7 +17,9 @@
 <body>
 <!-- Navigation: auf allen Seiten gleich -->
 <header>
-    <a href="index.html" class="logo">AE-1</a>
+    <!-- Zusatztext im span, weil er kleiner und grau ist -->
+    <a href="index.html" class="logo">AE-1 <span>Mein Augenblickfänger</span></a>
+
     <nav>
         <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
         <a href="index.html" aria-current="page">Kamera</a>
@@ -37,54 +38,59 @@
     <section class="hero">
         <p class="label">Mein Lieblingsobjekt</p>
         <h1>Canon AE-1</h1>
+        <!--  Einleitungssatz -->
+        <p>Eine Spiegelreflexkamera aus dem Jahr 1976 – und der Grund, warum ich analog fotografiere.</p>
         <!-- #bedienelemente springt zur Stelle mit id="bedienelemente" -->
         <a href="#bedienelemente" class="button">Bedienelemente entdecken ↓</a>
-        <a href="galerie.html" class="button">Zur Galerie →</a>
+        <!--  zweite Klasse, weil dieser Button nur einen Rahmen hat -->
+        <a href="galerie.html" class="button button-rand">Zur Galerie →</a>
     </section>
 
     <!-- Kamera erklärt: Foto + Liste zum Aufklappen -->
     <section id="bedienelemente">
+        <p class="label">01 So funktioniert sie</p>
         <h2>Neun Bedienelemente</h2>
         <p>Wähle eine Nummer in der Liste, um zu erfahren, was dieses Bedienelement macht.</p>
 
         <img src="img/kamera.png" alt="Canon AE-1 von vorne mit den Nummern 1 bis 9">
 
-        <!-- details = aufklappbar, damit kein JS benötigt sondern Browser direkt checkt, summary = immer nur eine sichtbare Zeile-> dafür bracuht es "name" -->
+        <!-- details = aufklappbar ohne JS, der Browser macht das selbst -->
+        <!-- summary = die Zeile, die immer sichtbar ist und auf die man klickt -->
         <!-- gleicher name = es kann immer nur eines offen sein -->
         <details name="kamera" open>
-            <summary><span>1</span> Verschlusszeitenrad</summary>
+            <summary><span>01</span> Verschlusszeitenrad</summary>
             <p>Bestimmt, wie lange Licht auf den Film fällt: von 1/1000 s bis 2 s, dazu «B» für Langzeitbelichtungen.</p>
         </details>
         <details name="kamera">
-            <summary><span>2</span> ISO</summary>
+            <summary><span>02</span> ISO</summary>
             <p>Hier stelle ich ein, wie lichtempfindlich mein Film ist (z. B. 400).</p>
         </details>
         <details name="kamera">
-            <summary><span>3</span> Auslöser</summary>
+            <summary><span>03</span> Auslöser</summary>
             <p>Öffnet den Verschluss und erzeugt das Bild. Halb gedrückt schaltet er den Belichtungsmesser ein.</p>
         </details>
         <details name="kamera">
-            <summary><span>4</span> Filmtransporthebel</summary>
+            <summary><span>04</span> Filmtransporthebel</summary>
             <p>Spannt den Verschluss und schiebt den Film ein Bild weiter. Ohne dieses Vorgehen, gibt es kein nächstes Foto.</p>
         </details>
         <details name="kamera">
-            <summary><span>5</span> Rückspulkurbel</summary>
+            <summary><span>05</span> Rückspulkurbel</summary>
             <p>Nach dem letzten Bild spule ich damit den Film zurück in die Patrone, bevor ich die Kamera öffne.</p>
         </details>
         <details name="kamera">
-            <summary><span>6</span> Sucher</summary>
+            <summary><span>06</span> Sucher</summary>
             <p>Durch ihn sehe ich genau, was das Objektiv sieht. Eine Nadel zeigt mir die passende Blende an.</p>
         </details>
         <details name="kamera">
-            <summary><span>7</span> Belichtungsmesser</summary>
+            <summary><span>07</span> Belichtungsmesser</summary>
             <p>Misst das Licht und wählt bei eingestellter Zeit automatisch die Blende (Zeitvorwahl). Das «AE» im Namen steht für «Auto Exposure».</p>
         </details>
         <details name="kamera">
-            <summary><span>8</span> Blendenring</summary>
+            <summary><span>08</span> Blendenring</summary>
             <p>Regelt, wie weit sich das Objektiv öffnet (f/1.8 bis f/22). Auf «A» übernimmt die Kamera.</p>
         </details>
         <details name="kamera">
-            <summary><span>9</span> Fokusring</summary>
+            <summary><span>09</span> Fokusring</summary>
             <p>Durch Drehen stelle ich scharf. Die Skala zeigt die Entfernung in Metern.</p>
         </details>
     </section>
@@ -92,6 +98,7 @@
     <!-- Meine Geschichte -->
     <section>
         <img src="img/kamera-hand.png" alt="Die Canon AE-1 in meiner Hand">
+        <p class="label">02 Meine Geschichte</p>
         <h2>Gebaut im Jahr 1976, bis heute in Gebrauch.</h2>
         <p>Im Jahr 2022 ersteigerte ich diese Kamera über Ricardo von einem älteren Herrn. Damals ahnte ich noch nicht, dass mit diesem kleinen Stück Vergangenheit eine grosse Leidenschaft beginnen würde. Seither begleitet sie mich durch verrückte Partynächte, Kaffeekränzchen mit meinen Freundinnen und emotionale Momente, wie den 80. Geburtstag meines Nanis.</p>
         <!-- ul = Liste ohne Reihenfolge, span für andere Formatierung -->
@@ -102,16 +109,29 @@
         </ul>
     </section>
 
-    <!-- Vorschau auf die Galerie -->
-    <section>
-        <p class="label">Die Galerie</p>
-        <h2>16 Negative warten darauf, entwickelt zu werden</h2>
-        <!-- alt bleibt leer: die Bilder sind hier nur Dekoration -->
-        <img src="img/bild_1.JPG" alt="">
-        <img src="img/bild_2.JPG" alt="">
-        <img src="img/bild_3.JPG" alt="">
-        <img src="img/bild_4.JPG" alt="">
-        <a href="galerie.html" class="button">Zur Galerie →</a>
+        <!-- Vorschau auf die Galerie -->
+        <section class="teaser">
+            <p class="label">03 Die Galerie</p>
+            <h2>16 Negative warten darauf, entwickelt zu werden.</h2>
+            <a href="galerie.html" class="button">Zur Galerie →</a> <!-- nach oben verschoben -->
+
+            figure = Bild mit Bildunterschrift (figcaption) -->
+            <figure>
+                <img src="img/bild_1.JPG" alt="">
+                <figcaption>Negativ 01</figcaption>
+            </figure>
+            <figure>
+                <img src="img/bild_2.JPG" alt="">
+                <figcaption>Negativ 02</figcaption>
+            </figure>
+            <figure>
+                <img src="img/bild_3.JPG" alt="">
+                <figcaption>Negativ 03</figcaption>
+            </figure>
+            <figure>
+                <img src="img/bild_4.JPG" alt="">
+                <figcaption>Negativ 04</figcaption>
+            </figure>
     </section>
 
 </main>
