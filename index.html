@@ -12,11 +12,116 @@
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
 
     <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
-<h1>zmittag?</h1>
+<!-- Navigation: auf allen Seiten gleich -->
+<header>
+    <a href="index.html" class="logo">AE-1</a>
+    <nav>
+        <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
+        <a href="index.html" aria-current="page">Kamera</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="ueber-mich.html">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <!-- Hell/Dunkel-Schalter, bekommt in Schritt 5 seine Funktion -->
+    <button id="theme" type="button" aria-label="Hell oder Dunkelmodus"></button>
+</header>
+
+<!-- Hauptinhalt: ist auf jeder Seite anders -->
+<main>
+
+    <!-- Einstieg: Titel und zwei Buttons -->
+    <section class="hero">
+        <p class="label">Mein Lieblingsobjekt</p>
+        <h1>Canon AE-1</h1>
+        <!-- #bedienelemente springt zur Stelle mit id="bedienelemente" -->
+        <a href="#bedienelemente" class="button">Bedienelemente entdecken ↓</a>
+        <a href="galerie.html" class="button">Zur Galerie →</a>
+    </section>
+
+    <!-- Kamera erklärt: Foto + Liste zum Aufklappen -->
+    <section id="bedienelemente">
+        <h2>Neun Bedienelemente</h2>
+        <p>Wähle eine Nummer in der Liste, um zu erfahren, was dieses Bedienelement macht.</p>
+
+        <img src="img/kamera.png" alt="Canon AE-1 von vorne mit den Nummern 1 bis 9">
+
+        <!-- details = aufklappbar, summary = immer sichtbare Zeile -->
+        <!-- gleicher name = es kann immer nur eines offen sein -->
+        <details name="kamera" open>
+            <summary><span>1</span> Verschlusszeitenrad</summary>
+            <p>Bestimmt, wie lange Licht auf den Film fällt: von 1/1000 s bis 2 s, dazu «B» für Langzeitbelichtungen.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>2</span> ISO</summary>
+            <p>Hier stelle ich ein, wie lichtempfindlich mein Film ist (z. B. 400).</p>
+        </details>
+        <details name="kamera">
+            <summary><span>3</span> Auslöser</summary>
+            <p>Öffnet den Verschluss und erzeugt das Bild. Halb gedrückt schaltet er den Belichtungsmesser ein.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>4</span> Filmtransporthebel</summary>
+            <p>Spannt den Verschluss und schiebt den Film ein Bild weiter. Ohne dieses Vorgehen, gibt es kein nächstes Foto.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>5</span> Rückspulkurbel</summary>
+            <p>Nach dem letzten Bild spule ich damit den Film zurück in die Patrone, bevor ich die Kamera öffne.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>6</span> Sucher</summary>
+            <p>Durch ihn sehe ich genau, was das Objektiv sieht. Eine Nadel zeigt mir die passende Blende an.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>7</span> Belichtungsmesser</summary>
+            <p>Misst das Licht und wählt bei eingestellter Zeit automatisch die Blende (Zeitvorwahl). Das «AE» im Namen steht für «Auto Exposure».</p>
+        </details>
+        <details name="kamera">
+            <summary><span>8</span> Blendenring</summary>
+            <p>Regelt, wie weit sich das Objektiv öffnet (f/1.8 bis f/22). Auf «A» übernimmt die Kamera.</p>
+        </details>
+        <details name="kamera">
+            <summary><span>9</span> Fokusring</summary>
+            <p>Durch Drehen stelle ich scharf. Die Skala zeigt die Entfernung in Metern.</p>
+        </details>
+    </section>
+
+    <!-- Meine Geschichte -->
+    <section>
+        <img src="img/kamera-hand.png" alt="Die Canon AE-1 in meiner Hand">
+        <h2>Gebaut im Jahr 1976, bis heute in Gebrauch.</h2>
+        <p>Im Jahr 2022 ersteigerte ich diese Kamera über Ricardo von einem älteren Herrn. Damals ahnte ich noch nicht, dass mit diesem kleinen Stück Vergangenheit eine grosse Leidenschaft beginnen würde. Seither begleitet sie mich durch verrückte Partynächte, Kaffeekränzchen mit meinen Freundinnen und emotionale Momente, wie den 80. Geburtstag meines Nanis.</p>
+        <!-- ul = Liste ohne Reihenfolge, strong = wichtiger Text -->
+        <ul class="fakten">
+            <li><strong>1976</strong> Erstes Baujahr</li>
+            <li><strong>1/1000 s</strong> Kürzeste Zeit</li>
+            <li><strong>36</strong> Bilder pro Film</li>
+        </ul>
+    </section>
+
+    <!-- Vorschau auf die Galerie -->
+    <section>
+        <p class="label">Die Galerie</p>
+        <h2>16 Negative warten darauf, entwickelt zu werden</h2>
+        <!-- alt bleibt leer: die Bilder sind hier nur Dekoration -->
+        <img src="img/bild_1.JPG" alt="">
+        <img src="img/bild_2.JPG" alt="">
+        <img src="img/bild_3.JPG" alt="">
+        <img src="img/bild_4.JPG" alt="">
+        <a href="galerie.html" class="button">Zur Galerie →</a>
+    </section>
+
+</main>
+
+<!-- Fussbereich: auf allen Seiten gleich -->
+<footer>
+    <p>© 2026 Sina Kollegger · Mein Augenblickfänger</p>
+    <a href="ueber-mich.html">Über mich & Impressum</a>
+    <a href="kontakt.html">Kontakt</a>
+</footer>
+
 </body>
 </html>

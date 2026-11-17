@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <!-- Seite passt sich der Bildschirmbreite an-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Über mich – Mein Lieblingsobjekt</title>
+
+    <!-- Schriften: Gochi Hand (Titel) und General Sans (Text) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap">
+    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f%5B%5D=general-sans@400,500,600&display=swap">
+
+    <!-- Mein CSS und mein JS (defer = JS erst starten, wenn die Seite geladen ist) -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+<!-- Navigation: auf allen Seiten gleich -->
+<header>
+    <a href="index.html" class="logo">AE-1</a>
+    <nav>
+        <!-- aria-current="page" markiert die Seite, auf der ich gerade bin -->
+        <a href="index.html">Kamera</a>
+        <a href="galerie.html">Galerie</a>
+        <a href="ueber-mich.html" aria-current="page">Über mich</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <!-- Hell/Dunkel-Schalter, bekommt in Schritt 5 seine Funktion -->
+    <button id="theme" type="button" aria-label="Hell oder Dunkelmodus"></button>
+</header>
+
+<!-- Hauptinhalt: ist auf jeder Seite anders -->
+<main>
+    <h1>Canon AE-1</h1>
+</main>
+
+<!-- Fussbereich: auf allen Seiten gleich -->
+<footer>
+    <p>© 2026 Sina Kollegger · Mein Augenblickfänger</p>
+    <a href="ueber-mich.html">Über mich & Impressum</a>
+    <a href="kontakt.html">Kontakt</a>
+</footer>
 
 </body>
 </html>
