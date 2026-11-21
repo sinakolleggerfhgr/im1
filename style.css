@@ -1,0 +1,77 @@
+/* =========================================
+   1. Farben (CSS-Variablen)
+   Hell = Standard. Dunkel = wenn <html> die Klasse "dunkel" hat.
+   :root ist immer aktiv, ohne dass irgendwo eine Klasse stehen muss.
+   Es ist sozusagen die Grundeinstellung. Eine Klasse wie .hell gilt nur, wenn sie im HTML wirklich steht.
+   ========================================= */
+/* Standard = dunkel (gilt immer) */
+:root {
+    --bg: #161615;
+    --flaeche: #232220;
+    --text: #ece8e1;
+    --akzent: #9dc4de;
+    --auf-akzent: #14212b;
+    --akzent-text: #9dc4de;
+    --glas: rgba(36, 35, 33, 0.55);
+    --glas-rand: rgba(255, 255, 255, 0.12);
+}
+
+/* Ausnahme = hell (nur wenn <html class="hell">) */
+.hell {
+    --bg: #f3f0ea;
+    --flaeche: #e8e3da;
+    --text: #22211f;
+    --akzent-text: #336a8f;
+    --glas: rgba(255, 255, 255, 0.55);
+    --glas-rand: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================
+   2. Grundeinstellungen
+   ========================================= */
+* {
+    box-sizing: border-box; /* Breite = inkl. Innenabstand und Rahmen */
+    margin: 0;              /* Standard-Abstände des Browsers entfernen */
+}
+
+body {
+    font-family: "Albert Sans", sans-serif;
+    font-size: 20px;
+    line-height: 1.65;
+    background: var(--bg);
+    color: var(--text);
+}
+
+img {
+    max-width: 100%; /* Bild nie breiter als sein Platz */
+    display: block;  /* entfernt die kleine Lücke unter Bildern */
+}
+
+a {
+    color: inherit; /* Links in Textfarbe statt Standard-Blau. Links sind im Browser automatisch blau und nach dem Anklicken lila.
+    Das passt nicht zum Design. inherit heisst „erben“: Der Link übernimmt die Farbe seines Elternelements.
+    Steht ein Link in einem Text mit --text-Farbe, hat er auch diese Farbe. */
+}
+
+/* =========================================
+   3. Schriften
+   ========================================= */
+h1 {
+    font-size: 120px;
+    font-weight: 300;        /* Light */
+    line-height: 1;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.12;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;          /* SemiBold */
+    text-transform: uppercase; /* Grossbuchstaben */
+    color: var(--akzent-text);
+}
